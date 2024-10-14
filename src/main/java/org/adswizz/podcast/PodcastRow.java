@@ -39,7 +39,7 @@ public class PodcastRow {
     public String getDeviceType() {
         return deviceType;
     }
-    @JsonProperty("errors")
+    @JsonProperty("deviceType")
     public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
     }

@@ -28,7 +28,7 @@ public class Segments {
         return aw_0_ais_adBreakIndex;
     }
     //@JsonDeserialize(using = SegmentIndexDeserializer.class)
-    @JsonProperty("aw_0_ais_adBreakIndex")
+    @JsonProperty("aw_0_ais.adBreakIndex")
     public void setAw_0_ais_adBreakIndex(String[] aw_0_ais_adBreakIndex) {
         this.aw_0_ais_adBreakIndex = aw_0_ais_adBreakIndex;
     }
@@ -38,7 +38,7 @@ public class Segments {
         return aw_0_ais_nextEventMs;
     }
     //@JsonDeserialize(using = SegmentIndexDeserializer.class)
-    @JsonProperty("aw_0_ais_nextEventMs")
+    @JsonProperty("aw_0_ais.nextEventMs")
     public void setAw_0_ais_nextEventMs(String[] aw_0_ais_nextEventMs) {
         this.aw_0_ais_nextEventMs = aw_0_ais_nextEventMs;
     }

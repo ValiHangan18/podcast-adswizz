@@ -1,6 +1,7 @@
 package org.adswizz.podcast.utils;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.adswizz.podcast.PodcastRow;
 
 import java.io.BufferedReader;
@@ -17,11 +18,12 @@ public class Utils {
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
-            Gson gson = new Gson();
             while ((line = br.readLine()) != null) {
-                //TODO rather than replacing the dots, I should use a custom deserializer
-                String new_line = line.replace(".", "_");
-                PodcastRow podcastRow = gson.fromJson(new_line, PodcastRow.class);
+                ObjectMapper objectMapper = new ObjectMapper();
+                JsonNode jsonNode = objectMapper.readTree(line);
+
+                PodcastRow podcastRow = objectMapper.treeToValue(jsonNode, PodcastRow.class);
+
                 podcasts.add(podcastRow);
             }
         } catch (IOException e) {

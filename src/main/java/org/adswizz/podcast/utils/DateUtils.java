@@ -9,7 +9,6 @@ import java.util.Locale;
 public class DateUtils {
     public static String formatLocalDateTimeInUTC(long epochTime) {
         LocalDateTime localDateTime = Instant.ofEpochMilli(epochTime).atZone(ZoneId.of("UTC")).toLocalDateTime();
-        //DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d MMM u", Locale.ENGLISH);
         return localDateTime.format(DateTimeFormatter.ofPattern("E HH:mm", Locale.ENGLISH));
     }
 }
